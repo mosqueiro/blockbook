@@ -1,0 +1,64 @@
+{
+  "coin": {
+    "name": "Zcr",
+    "shortcut": "ZCR",
+    "label": "ZCore",
+    "alias": "zcr"
+  },
+  "ports": {
+    "backend_rpc": 8030,
+    "backend_message_queue": 38330,
+    "blockbook_internal": 9030,
+    "blockbook_public": 9130
+  },
+  "ipc": {
+    "rpc_url_template": "http://127.0.0.1:{{.Ports.BackendRPC}}",
+    "rpc_user": "zcrrpc",
+    "rpc_pass": "BeJRwvpKaqUhYqJR2FyUktivNnvVygTsjGdzDpVvnB2H",
+    "rpc_timeout": 25,
+    "message_queue_binding_template": "tcp://127.0.0.1:{{.Ports.BackendMessageQueue}}"
+  },
+  "backend": {
+    "package_name": "backend-zcr",
+    "package_revision": "zcore",
+    "system_user": "zcr",
+    "version": "2.0.2.2",
+    "binary_url": "https://github.com/zcore-coin/zcore-2.0/releases/download/v2.0.2.2/zcore-2.0.2.2-x86_64-linux-gnu.tar.gz",
+    "extract_command": "tar -C backend --strip 1 -xf",
+    "exclude_files": [
+      "bin/zcore-qt"
+    ],    
+    "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/zcored -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
+    "logrotate_files_template": "{{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend/*.log",
+    "postinst_script_template": "",
+    "service_type": "forking",
+    "service_additional_params_template": "",
+    "protect_memory": true,
+    "mainnet": true,
+    "server_config_file": "bitcoin_like.conf",
+    "client_config_file": "bitcoin_like_client.conf",
+    "additional_params": {
+      "mempoolexpiry": 72
+    }
+  },
+  "blockbook": {
+    "package_name": "blockbook-zcr",
+    "system_user": "blockbook-zcr",
+    "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
+    "public_binding_template": ":{{.Ports.BlockbookPublic}}",
+    "explorer_url": "",
+    "additional_params": "-dbcache=0 -workers=1 -resyncindexperiod=30000",
+    "block_chain": {
+      "mempool_workers": 8,
+      "mempool_sub_workers": 2,
+      "block_addresses_to_keep": 300,
+      "xpub_magic": 3429129318,
+      "slip44": 428,
+      "additional_params": {}
+    }
+  },
+  "meta": {
+    "package_maintainer": "Erick Costa",
+    "package_maintainer_email": "erick@zcore.cash"
+  }
+}

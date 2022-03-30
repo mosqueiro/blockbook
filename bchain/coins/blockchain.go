@@ -52,6 +52,7 @@ import (
 	"github.com/mosqueiro/blockbook/bchain/coins/viacoin"
 	"github.com/mosqueiro/blockbook/bchain/coins/vipstarcoin"
 	"github.com/mosqueiro/blockbook/bchain/coins/zec"
+	"github.com/mosqueiro/blockbook/bchain/coins/zcr"
 	"github.com/mosqueiro/blockbook/common"
 )
 
@@ -126,6 +127,7 @@ func init() {
 	BlockChainFactories["BitZeny"] = bitzeny.NewBitZenyRPC
 	BlockChainFactories["Trezarcoin"] = trezarcoin.NewTrezarcoinRPC
 	BlockChainFactories["ECash"] = ecash.NewECashRPC
+	BlockChainFactories["Zcr"] = zcr.NewZcrRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
