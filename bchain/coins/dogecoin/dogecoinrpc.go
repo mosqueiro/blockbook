@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 
 	"github.com/golang/glog"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/bchain/coins/btc"
+	"github.com/mosqueiro/blockbook/bchain"
+	"github.com/mosqueiro/blockbook/bchain/coins/btc"
 )
 
 // DogecoinRPC is an interface to JSON-RPC dogecoind service.

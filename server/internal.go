@@ -8,10 +8,10 @@ import (
 
 	"github.com/golang/glog"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/trezor/blockbook/api"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/common"
-	"github.com/trezor/blockbook/db"
+	"github.com/mosqueiro/blockbook/api"
+	"github.com/mosqueiro/blockbook/bchain"
+	"github.com/mosqueiro/blockbook/common"
+	"github.com/mosqueiro/blockbook/db"
 )
 
 // InternalServer is handle to internal http server

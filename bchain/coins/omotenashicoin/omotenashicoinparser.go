@@ -11,9 +11,9 @@ import (
 	"github.com/martinboehm/btcd/blockchain"
 	"github.com/martinboehm/btcd/wire"
 	"github.com/martinboehm/btcutil/chaincfg"
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/bchain/coins/btc"
-	"github.com/trezor/blockbook/bchain/coins/utils"
+	"github.com/mosqueiro/blockbook/bchain"
+	"github.com/mosqueiro/blockbook/bchain/coins/btc"
+	"github.com/mosqueiro/blockbook/bchain/coins/utils"
 )
 
 // magic numbers

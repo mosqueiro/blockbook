@@ -1,4 +1,4 @@
-module github.com/trezor/blockbook
+module github.com/mosqueiro/blockbook
 
 go 1.17
 

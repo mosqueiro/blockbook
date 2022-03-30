@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/db"
+	"github.com/mosqueiro/blockbook/bchain"
+	"github.com/mosqueiro/blockbook/db"
 )
 
 func testConnectBlocks(t *testing.T, h *TestHandler) {
