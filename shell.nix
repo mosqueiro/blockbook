@@ -13,6 +13,6 @@ stdenv.mkDerivation {
     zlib
   ];
   shellHook = ''
-    export CGO_LDFLAGS="-L${stdenv.cc.cc.lib}/lib -lrocksdb -lz -lbz2 -lsnappy -llz4 -lm -lstdc++"
+    export CGO_LDFLAGS="-L${stdenv.cc.cc.lib}/lib -lrocksdb -lz -lbz2 -lzstd -lsnappy -llz4 -lm -lstdc++"
   '';
 }

@@ -15,7 +15,7 @@ ENV ROCKSDB_VERSION=v6.22.1
 ENV GOPATH=/go
 ENV PATH=$PATH:$GOPATH/bin
 ENV CGO_CFLAGS="-I/opt/rocksdb/include"
-ENV CGO_LDFLAGS="-L/opt/rocksdb -ldl -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy -llz4"
+ENV CGO_LDFLAGS="-L/opt/rocksdb -ldl -lzstd -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy -llz4"
 ARG TCMALLOC
 
 RUN mkdir /build
